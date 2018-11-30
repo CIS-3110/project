@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Phase 1 </title>
+        <link href="style.css" rel="stylesheet" >
+    </head>
+
+    <header>
+        <nav>
+            <div class="dropdown">
+                <button class="dropbutton">Team Pages</button>
+                <div class="dropdown-menu">
+                    <a id = "menu" href="https://s3.amazonaws.com/cis3110groupassignment/curtishorton.html">Curtis</a>
+                    <a id = "menu" href="https://s3.amazonaws.com/cis3110groupassignment/davidly.html">David</a>
+                    <a id = "menu" href="https://s3.amazonaws.com/cis3110groupassignment/mw1.html">Muhammad</a>
+                    <a id = "menu" href="https://s3.amazonaws.com/cis3110groupassignment/rayivy.html">Jonathan</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <body id="bod">
+        <div class="intro-div">
+            <h3>Enter a Number between 1 and 100</h3>
+            <input type="number" id="initial" placeholder="1-100"/><!--ask for a numeric value-->
+            <input type="name" id="name" placeholder="Enter your name here"/><!--ask for a text value-->
+            <button id="complete">Print Information to Console</button>
+        </div>
+
+
+        <script type="text/javascript">
+            document.getElementById("complete").onclick = function ()
+            {
+                var l = document.getElementById("initial").value;
+                console.log(l);//prints input to consol and value type
+                console.log("var l is of type " + typeof l);
+                createnewdiv(l);
+            };
+
+            function createnewdiv(x) {
+                var personsName = document.getElementById("name").value;
+                var dynamicDiv = document.createElement("div");
+                var newp = document.createElement("p");
+                var newPMessage = personsName + " entered the number " + x;
+                var nodeToPaint = document.createTextNode(newPMessage);
+                newp.appendChild(nodeToPaint);
+                dynamicDiv.appendChild(newp);
+                dynamicDiv.setAttribute("id", x);
+                dynamicDiv.setAttribute("class", "generateddiv");
+                var element = document.getElementById("bod");
+                element.appendChild(dynamicDiv);
+                createLink(x);
+            }
+            function createLink(wordInTheLink) {
+                var differentDiv = document.createElement("div");
+                var a = document.createElement('a');
+                var l = "See what link you received with the number you chose!";
+                var linkText = document.createTextNode(l);
+                a.appendChild(linkText);
+                differentDiv.appendChild(a);
+                differentDiv.setAttribute("id", wordInTheLink);
+                differentDiv.setAttribute("class", "linkdiv");
+                if (wordInTheLink <= 25) {
+                    a.href = "https://www.google.com/";
+                } else if (wordInTheLink <= 50) {
+                    a.href = "https://www.youtube.com/";
+                } else if (wordInTheLink <= 75) {
+                    a.href = "https://www.amazon.com/";
+                } else
+                    a.href = "https://www.netflix.com/";
+                var element = document.getElementById("bod");
+                element.appendChild(differentDiv);
+            }
+        </script>
+    </body>
+</html>

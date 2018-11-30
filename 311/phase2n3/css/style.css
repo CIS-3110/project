@@ -1,0 +1,53 @@
+.pctImg{
+width: 100%;
+height: 100%;
+max-width: 100%;
+max-height: 75%;
+}
+
+
+.imgDiv{
+  height:400px;
+  padding:10px;
+  background-color: #A9A9A9;
+	color: #7B241C;
+	border-radius: 3px; //adjust
+	padding: 20px;
+	font-size: 40%; //adjust
+  margin: 10px;
+  border: 3px;
+}
+
+.icon {
+  height: 40px;
+}
+
+#nav li {
+    display: inline;
+}
+
+#nav a {
+  padding: 10px 20px;
+}
+
+
+
+h1 {
+  text-transform: uppercase;
+  color: blue;
+}
+
+#gridDiv {
+  display: grid;
+  grid-gap: 3px;
+	grid-template-columns: 33% 33% 33%;
+}
+
+.Text1 {
+  font-size: 15px;
+}
+
+.Text2 {
+  font-size: 15px;
+}
+
