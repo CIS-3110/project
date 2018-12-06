@@ -1,2 +1,4 @@
 # project
-CIS-3110 Phase 5
+CIS-3110
+
+Phases 1 - 5
