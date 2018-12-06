@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>World of Crypto!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+
+<body style="background-color:#333;">
+   <div class="alert alert-success" role="alert">
+  <center>Welcome to CRYPTO! <a href="https://coinmarketcap.com/" class="alert-link">Check out the current Market!</a>. For Live Updates!</center>
+</div>
+
+
+<div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="pic1.jpg" width="800" height="600">
+	  <div class="carousel-caption">
+    <h3>TEAM CRYPTO</h3>
+    <p>Learn about a few Crypto Currencies!</p>
+  </div>
+    </div>
+    <div class="carousel-item">
+      <img src="pic2.jpg" width="800" height="600">
+    </div>
+    <div class="carousel-item">
+      <img src="pic3.jpg" width="800" height="600">
+	  <div class="carousel-caption">
+  </div>
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+<br>
+
+    <nav class="navbar navbar-dark bg-dark">
+  <!-- Navbar content -->
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">David <span class="badge badge-primary">Chief</span></a>
+      <a class="nav-item nav-link" href="#">Kevin<span class="badge badge-primary">Engineer</span> </a>
+      <a class="nav-item nav-link" href="#">Muhammad<span class="badge badge-primary">Engineer</span> </a>
+      <a class="nav-item nav-link disabled" href="#">Curtis<span class="badge badge-primary">Developer</span></a>
+    </div>
+  </div>
+</nav>
+
+
+
+    <script>
+        var images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.png", "6.png"];
+        var titles = ["Bitcoin (BTC)",
+            "Ethereum (ETH)",
+            "Ripple (XRP)",
+            "Litecoin (LTC)",
+            "Monero (XMR)",
+            "Cardano (ADA)"
+        ];
+
+        function setCookie(cname) {
+            document.cookie = "image=" + cname;
+            if (cname == "") {
+                document.cookie = "image=";
+            }
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(";");
+            console.log(ca);
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        var arrayIndex = [0, 1, 2, 3, 4, 5];
+        console.log(images);
+        console.log(arrayIndex);
+
+        var url;
+        var indexNo, titleUpThere;
+        var overallDiv = document.createElement("div");
+        var currentCookie = getCookie("image");
+        overallDiv.setAttribute("class", "grid");
+        for (var index = 0; index < images.length; index++) {
+            url = images[index];
+            indexNo = index;
+            titleUpThere = titles[index];
+            urlOfDetailPage = "detailPage.html?" + "img=" + url + "&indexNo=" + indexNo;
+			  var boxDiv = document.createElement("div");
+            var newButton = document.createElement("button");
+            var favStar = document.createElement("img");
+            var unFaveButton = document.createElement("button");
+            var titleDiv = document.createElement("div");
+            var h2Header = document.createElement("h2");
+            var textNode = document.createTextNode(titleUpThere);
+            if (currentCookie == images[index]) {
+                favStar.setAttribute("src", "star.png");
+                favStar.setAttribute("alt", "");
+                favStar.setAttribute("class", "picStar");
+                newButton.setAttribute("id", "pic" + images[index]);
+                newButton.setAttribute("class", "buttonsHidden");
+                unFaveButton.setAttribute("id", "unfavoriteIt");
+                unFaveButton.setAttribute("class", "buttons");
+                unFaveButton.innerHTML = "Unfavorite";
+            } else {
+                newButton.setAttribute("id", "pic" + images[index]);
+                newButton.setAttribute("class", "buttons");
+                newButton.innerHTML = "Favorite ";
+                unFaveButton.setAttribute("id", "unfavoriteIt");
+                unFaveButton.setAttribute("class", "buttonsHidden");
+            }
+            boxDiv.setAttribute("class", "box");
+            h2Header.setAttribute("class", "centering");
+            h2Header.appendChild(textNode);
+            titleDiv.appendChild(h2Header);
+            var imgDiv = document.createElement("div");
+            imgDiv.setAttribute("class", "divImage");
+            var imgInPage = document.createElement("img");
+            imgInPage.setAttribute("src", url);
+            imgInPage.setAttribute("class", "pictureImage");
+            var link = document.createElement("a");
+            link.setAttribute("href", urlOfDetailPage);
+            link.appendChild(imgInPage);
+            imgDiv.appendChild(link);
+            boxDiv.appendChild(h2Header);
+            boxDiv.appendChild(link);
+            if (currentCookie == images[index]) {
+                boxDiv.appendChild(favStar);
+                boxDiv.appendChild(newButton);
+                boxDiv.appendChild(unFaveButton);
+            } else {
+                boxDiv.appendChild(newButton);
+            }
+            overallDiv.appendChild(boxDiv);
+        }
+        document.body.appendChild(overallDiv);
+        document.getElementById('pic1.jpg').onclick = function() {
+            setCookie(images[0]);
+            this.innerHTML = "Done!";
+            this.disabled = true;
+        }
+        document.getElementById('pic2.jpg').onclick = function() {
+            setCookie(images[1]);
+            this.innerHTML = "Done!";
+            this.disabled = true;
+        }
+        document.getElementById('pic3.jpg').onclick = function() {
+            setCookie(images[2]);
+            this.innerHTML = "Done!";
+            this.disabled = true;
+        }
+        document.getElementById('pic4.jpg').onclick = function() {
+            setCookie(images[3]);
+            this.innerHTML = "Done!";
+            this.disabled = true;
+        }
+        document.getElementById('pic5.png').onclick = function() {
+            setCookie(images[4]);
+            this.innerHTML = "Done!";
+            this.disabled = true;
+        }
+        document.getElementById('pic6.png').onclick = function() {
+            setCookie(images[5]);
+            this.innerHTML = "Done!";
+            this.disabled = true;
+        }
+        document.getElementById('unfavoriteIt').onclick = function() {
+            setCookie("");
+            this.innerHTML = "Done!";
+            this.disabled = true;
+        }
+		
+		 $(document).ready(function() {
+      $('.progress .progress-bar').css("width",
+                function() {
+                    return $(this).attr("aria-valuenow") + "%";
+                }
+        )
+    });
+
+    </script>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+<br>
+
+
+<center>
+<font color="white">Which Coin Do You Prefer?</font>
+<br>
+<div class="custom-control custom-checkbox custom-control-inline">
+  <input type="checkbox" class="custom-control-input" id="defaultInline1">
+  <label class="custom-control-label" for="defaultInline1">Bitcoin</label>
+</div>
+
+<!-- Default inline 2-->
+<div class="custom-control custom-checkbox custom-control-inline">
+  <input type="checkbox" class="custom-control-input" id="defaultInline2">
+  <label class="custom-control-label" for="defaultInline2">Ethereum</label>
+</div>
+
+<!-- Default inline 3-->
+<div class="custom-control custom-checkbox custom-control-inline">
+  <input type="checkbox" class="custom-control-input" id="defaultInline3">
+  <label class="custom-control-label" for="defaultInline3">Ripple</label>
+</div>
+<!-- Default inline 4-->
+<div class="custom-control custom-checkbox custom-control-inline">
+  <input type="checkbox" class="custom-control-input" id="defaultInline4">
+  <label class="custom-control-label" for="defaultInline4">Litecoin</label>
+</div>
+
+<!-- Default inline 5-->
+<div class="custom-control custom-checkbox custom-control-inline">
+  <input type="checkbox" class="custom-control-input" id="defaultInline5">
+  <label class="custom-control-label" for="defaultInline5">Monero</label>
+</div>
+
+<div class="custom-control custom-checkbox custom-control-inline">
+  <input type="checkbox" class="custom-control-input" id="defaultInline6">
+  <label class="custom-control-label" for="defaultInline6">Cardano</label>
+</div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</center>
+
+<br>
+
+
+</body>
+
+</html>
